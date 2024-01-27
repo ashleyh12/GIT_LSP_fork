@@ -18,7 +18,6 @@ public class Wordcounting {
 		//Buffer Reads text from a character-input stream, buffering characters so as 
 //		to provide for the efficient reading of characters... more efficient than Scanner
 		BufferedReader reader = new BufferedReader(new FileReader(path.toFile()));
-		FileInputStream fin = new FileInputStream("words.text");
 		
 		//creating the HashMap
 		Map<String, Integer> frequency = new HashMap<>();
