@@ -8,6 +8,8 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.w3c.dom.ranges.Range;
+
 
 public class Wordcounting {
 
@@ -28,19 +30,11 @@ public class Wordcounting {
         	{
         	    System.out.println(entry.getKey() + ": " + entry.getValue());
         	}
-        	
-        } 
-//       
-//        	catch (IOException e) 
-//        	{
-//        		
-//        	System.err.println("Error reading the file: " + e.getMessage());
-//        	
-//        	}
+        }
         }
         	
         	
-        	
+//function? to go through each word and count its frequency.        	
         	
         private static Map<String, Integer> getWordFrequency(BufferedReader reader) throws IOException {
 
@@ -53,14 +47,22 @@ public class Wordcounting {
             {
             	
             	
-                // Splitting the words 
+                // Splitting the words (.split excludes white space )
                 String[] words = line.split(" ");
 
-                // Counting the frequency of each word found in the file
+                // Looping through the file and counting the frequency of each word 
                 for (String word : words) 
                 {
-                    word = word.toLowerCase(); // Converting the words to lowercase (ex: Design and design are seen as the same)
-                    frequency.put(word, frequency.getOrDefault(word, 0) + 1); //making the word = key, frequency = value being incremented
+                	//we use “.*\\d.*” as regex to denote that the string contains at least one digit (https://www.baeldung.com/java-string-number-presence)
+                	if (word.length() < 3 || word.matches(".*\\d.*"))
+                	{
+                		continue;
+                	}
+                	else
+                	{
+	                    word = word.toLowerCase(); // Converting the words to lowercase (ex: Design and design are seen as the same)
+	                    frequency.put(word, frequency.getOrDefault(word, 0) + 1); //making the word = key, frequency = value being incremented
+                	}
                 }
             }
             return frequency;
