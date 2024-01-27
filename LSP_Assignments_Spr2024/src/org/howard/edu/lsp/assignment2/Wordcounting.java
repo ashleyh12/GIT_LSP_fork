@@ -22,7 +22,21 @@ public class Wordcounting {
 		
 		//creating the HashMap
 		Map<String, Integer> frequency = new HashMap<>();
-	
+		
+		//reading each line from the .txt file
+		String line;
+		while ((line = reader.readLine()) != null)
+		{
+			//splitting the words 
+			String [] words = line.split(" ");
+			
+			//counting the frequency of each word found in the file
+			for (String word: words) {
+				word = word.toLowerCase(); //converting the words to lowercase (ex: Design and design are seen as the same)
+				frequency.put(word, frequency.getOrDefault(word, 0) + 1);
+			}
+			
+		}
 
 	}
 
