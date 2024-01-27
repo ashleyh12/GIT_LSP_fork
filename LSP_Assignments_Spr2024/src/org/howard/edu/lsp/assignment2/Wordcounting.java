@@ -1,8 +1,10 @@
 package org.howard.edu.lsp.assignment2;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -18,6 +20,12 @@ public class Wordcounting {
         // Grab the file using a relative path
         Path path = Paths.get(System.getProperty("user.dir"))
                 .resolve("words.text");
+                
+
+        File b = new File("/Users/ashleyhaynes/git/GIT_LSP_fork/LSP_Assignments_Spr2024/org.howard.edu.lsp.assignment2/words.text");
+        String absolute = b.getCanonicalPath(); // may throw IOException
+
+
 
         // Buffer Reads text from a character-input stream, buffering characters so as 
         // to provide for the efficient reading of characters... more efficient than Scanner
@@ -34,7 +42,13 @@ public class Wordcounting {
         }
         	
         	
-//function? to go through each word and count its frequency.        	
+private static Object dataPath(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+//function. to go through each word and count its frequency.        	
         	
         private static Map<String, Integer> getWordFrequency(BufferedReader reader) throws IOException {
 
