@@ -16,11 +16,11 @@ public class Wordcounting {
         // Retrieve the words.text file using a relative path
         Path path = Paths.get(System.getProperty("user.dir"))
                 .resolve("words.txt");
-//        
-//        // Get the absolute path of the 
-//        Path absolutePath = path.toAbsolutePath();
-//        System.out.println("Absolute path of the text file is: " + absolutePath);
-//
+        
+        // Get the absolute path of the 
+        Path absolutePath = path.toAbsolutePath();
+        System.out.println("Absolute path of the text file is: " + absolutePath);
+
 
 
   
