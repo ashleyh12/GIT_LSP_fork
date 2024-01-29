@@ -18,7 +18,8 @@ public class Wordcounting {
         
         // Get the absolute path of the 
         Path absolutePath = path.toAbsolutePath();
-        System.out.println("Absolute path of the text file is: " + absolutePath);
+        System.out.println("Absolute path of the text file is blank: " + absolutePath);
+        
 
 
 
