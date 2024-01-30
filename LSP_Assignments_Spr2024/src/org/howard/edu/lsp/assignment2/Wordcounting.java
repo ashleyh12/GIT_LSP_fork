@@ -29,7 +29,7 @@ public class Wordcounting {
             // Display the word frequency 
             for (Map.Entry<String, Integer> entry : frequency.entrySet()) 
             {
-                System.out.println(entry.getKey() + ":  " + entry.getValue()); //making the word = key, frequency = value being incremented
+                System.out.println(entry.getKey() + ": " + entry.getValue()); //making the word = key, frequency = value being incremented
             }
         }
     }
