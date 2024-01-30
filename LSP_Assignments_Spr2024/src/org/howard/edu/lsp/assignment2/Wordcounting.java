@@ -66,7 +66,7 @@ public class Wordcounting {
             String[] words = line.split("\\s+");
             for (String word : words) 
             {
-            	//if the rest of the words in the file has a length >=4 and doesn't have a number
+            	//if the rest of the words in the file has a length >= 4 and doesn't have a number
                 if (word.length() >= 4 && !word.matches(".*\\d.*")) 
                 {
                 	word = word.replaceAll("[^a-zA-Z0-9]", "");
