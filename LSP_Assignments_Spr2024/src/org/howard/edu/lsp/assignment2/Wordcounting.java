@@ -1,7 +1,6 @@
 package org.howard.edu.lsp.assignment2;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -9,18 +8,17 @@ import java.nio.file.Paths;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import javax.print.DocFlavor.URL;
 
 public class Wordcounting {
 
     public static void main(String[] args) throws IOException {
-        // Retrieve the words.text file using a relative path
-//        Path path = Paths.get(System.getProperty("user.dir")).resolve("words.txt");
-//
-//        // Get the absolute path of the words.txt file
-//        Path absolutePath = path.toAbsolutePath();
-    	Path path = Path.of("words.txt").toAbsolutePath();
-    	System.out.println("Trying to open file " + path);        
+//         Retrieve the words.text file using a relative path
+        Path path = Paths.get(System.getProperty("user.dir")).resolve("words.txt");
+
+        // Get the absolute path of the words.txt file
+        Path absolutePath = path.toAbsolutePath();
+
+       
         
         // Buffer Reads text from a character-input stream, buffering characters so as
         try (BufferedReader reader = new BufferedReader(new FileReader(path.toFile()))) 
