@@ -1,5 +1,8 @@
-Why I love it: Many kids will recognize themselves in the Elephant’s Child and his (in)satiable curiosity.
- After you read this one, have students come up with stories for the way other animals got their unique features.
- How did the giraffe 100 let's get its long neck? How did the turtle get get's its shell? So let's  
- many possibilities.! let's
+Design     design and code a program that reads a text file and counts the number of times each word that it contains appears 100
+The quick brown     fox jumps over the lazy dog 10 times The dog is not lazy just very relaxed
+This is a sample sentence This sentence is used      for testing purposes
+In this example Example we'll see how to count      word occurrences in a text file
+Each word in the file will be counted counTed regardless of punctuation or capitalization
+123 456 789 1000 are numbers in this input They should not be counted as words
+I can't believe we've already reached 100 words
 
