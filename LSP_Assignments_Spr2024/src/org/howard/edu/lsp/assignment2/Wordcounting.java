@@ -18,9 +18,6 @@ public class Wordcounting {
         Path path = Paths.get(System.getProperty("user.dir")).resolve("src/org/howard/edu/lsp/assignment2/words.txt");
 
         // Buffer reads text from a character-input stream, buffering characters
-    	
-    	
-    	
         try (BufferedReader reader = new BufferedReader(new FileReader(path.toFile()))) 
         {
             Map<String, Integer> frequency = getWordFrequency(reader);
