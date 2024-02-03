@@ -67,7 +67,7 @@ public class Wordcounting {
             
             for (String word : words) 
             {
-            	//if the rest of the words in the file has a length >=4 and doesn't have a number
+            	//if the rest of the words in the file have a length >=4 and doesn't have a number
 
                 if (word.length() >= 4 && !word.matches(".*\\d.*")) 
                 {
