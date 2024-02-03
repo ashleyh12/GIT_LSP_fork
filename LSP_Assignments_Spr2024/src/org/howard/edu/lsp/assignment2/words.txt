@@ -5,4 +5,3 @@ In this example Example we'll see how to count      word occurrences in a text f
 Each word in the file will be counted counTed regardless of punctuation or capitalization
 123 456 789 1000 are numbers in this input They should not be counted as words
 I can't believe we've already reached 100 words
-

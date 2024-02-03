@@ -28,7 +28,7 @@ public class Wordcounting {
             // Display the word frequency 
             for (Map.Entry<String, Integer> entry : frequency.entrySet()) 
             {
-                System.out.println(entry.getKey() + ":" + entry.getValue()); //making the word = key, frequency = value being incremented
+                System.out.println(entry.getKey() + ": " + entry.getValue()); //making the word = key, frequency = value being incremented
             }
         }
     }
@@ -52,7 +52,7 @@ public class Wordcounting {
             	//we use “.*\\d.*” as regex to denote that the string contains at least one digit (https://www.baeldung.com/java-string-number-presence)
                 if (word.length() >= 4 && !word.matches(".*\\d.*")) 
                 {
-                	word = word.replaceAll("[^a-zA-Z0-9]", "");
+                	word = word.replaceAll("[^a-zA-Z0-9']", "");
                     word = word.toLowerCase();
                     frequency.put(word, frequency.getOrDefault(word, 0) + 1);
                 }
@@ -71,7 +71,7 @@ public class Wordcounting {
 
                 if (word.length() >= 4 && !word.matches(".*\\d.*")) 
                 {
-                	word = word.replaceAll("[^a-zA-Z0-9]", "");
+                	word = word.replaceAll("[^a-zA-Z0-9']", "");
                     word = word.toLowerCase();
                     frequency.put(word, frequency.getOrDefault(word, 0) + 1);
                 }
