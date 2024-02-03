@@ -14,10 +14,10 @@ public class Wordcounting {
     public static void main(String[] args) throws IOException {
     	
     	
-//         Retrieve the words.text file using a relative path
+//         Retrieving the words.txt file using a relative path
         Path path = Paths.get(System.getProperty("user.dir")).resolve("src/org/howard/edu/lsp/assignment2/words.txt");
 
-        // Buffer Reads text from a character-input stream, buffering characters
+        // Buffer reads text from a character-input stream, buffering characters
     	
     	
     	
@@ -52,6 +52,8 @@ public class Wordcounting {
             	//we use “.*\\d.*” as regex to denote that the string contains at least one digit (https://www.baeldung.com/java-string-number-presence)
                 if (word.length() >= 4 && !word.matches(".*\\d.*")) 
                 {
+                	//The replaceAll() method searches a string for a value or a regular expression and 
+                	//returns a new string with all values replaced
                 	word = word.replaceAll("[^a-zA-Z0-9']", "");
                     word = word.toLowerCase();
                     frequency.put(word, frequency.getOrDefault(word, 0) + 1);
