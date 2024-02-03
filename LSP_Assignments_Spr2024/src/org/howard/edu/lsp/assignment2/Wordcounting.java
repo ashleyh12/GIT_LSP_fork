@@ -17,7 +17,7 @@ public class Wordcounting {
 //         Retrieve the words.text file using a relative path
         Path path = Paths.get(System.getProperty("user.dir")).resolve("src/org/howard/edu/lsp/assignment2/words.txt");
 
-        // Buffer Reads text from a character-input stream, buffering characters so as
+        // Buffer Reads text from a character-input stream, buffering characters
     	
     	
     	
@@ -28,7 +28,7 @@ public class Wordcounting {
             // Display the word frequency 
             for (Map.Entry<String, Integer> entry : frequency.entrySet()) 
             {
-                System.out.println(entry.getKey() + ": " + entry.getValue()); //making the word = key, frequency = value being incremented
+                System.out.println(entry.getKey() + ":" + entry.getValue()); //making the word = key, frequency = value being incremented
             }
         }
     }
@@ -64,9 +64,11 @@ public class Wordcounting {
         while ((line = reader.readLine()) != null) 
         {
             String[] words = line.split("\\s+");
+            
             for (String word : words) 
             {
             	//if the rest of the words in the file has a length >=4 and doesn't have a number
+
                 if (word.length() >= 4 && !word.matches(".*\\d.*")) 
                 {
                 	word = word.replaceAll("[^a-zA-Z0-9]", "");
