@@ -30,7 +30,7 @@ public class Wordcounting {
         }
     }
 
-    // Go through each word and count its frequency.
+    // Go through each word and count its frequency
     private static Map<String, Integer> getWordFrequency(BufferedReader reader) throws IOException {
     	
         // Creating the LinkedHashMap
