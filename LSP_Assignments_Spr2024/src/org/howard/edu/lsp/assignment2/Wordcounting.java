@@ -14,7 +14,7 @@ public class Wordcounting {
     public static void main(String[] args) throws IOException {
     	
     	
-//         Retrieving the words.txt file using a relative path
+//         Retrieving the words.txt file using a relative  path
         Path path = Paths.get(System.getProperty("user.dir")).resolve("src/org/howard/edu/lsp/assignment2/words.txt");
 
         // Buffer reads text from a character-input stream, buffering characters
