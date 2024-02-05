@@ -1,1 +1,0 @@
-INDEX VERSION 1.134+/Users/ashleyhaynes/eclipse-workspace/LSP_Assignments_Spr2024/.metadata/.plugins/org.eclipse.jdt.core
