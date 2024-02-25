@@ -21,44 +21,64 @@ public class IntegerSet {
     }
     
     
-    
 //		​// Clears the internal representation of the set
 		public void clear() {
-			
+			set.clear();
 			
 		};
 		 
 		// Returns the length of the set
 		public int length() {
-			
+			return set.size();
 			
 		}; // returns the length
 		 
+		
 		/*
 		             * Returns true if the 2 sets are equal, false otherwise;
 		* Two sets are equal if they contain all of the same values in ANY order.  This overrides
 		* the equal method from the Object class.
 		*/
-		public boolean equals(Object o) {
-			
+		
+		public boolean equals(IntegerSet o) {
+			ArrayList<Integer>set2 = (ArrayList<Integer>) o.set;
+			if(set.size() == set2.size()) {
+				return true;
+			}
+			else {
+				return false;
+			}
 			
 		};
 		 
-		// Returns true if the set contains the value, otherwise false
+		
+		// Returns true if the set contains the value, otherwise false ??????????????????!!!!!!
 		public boolean contains(int value) {
-			
+			return false;
 			
 		};    
 		 
+		
+		
 		// Returns the largest item in the set; Throws a IntegerSetException if the set is empty
-		public int largest() {
-			
-			
-		};
-		 
-		public int smallest() throws IOException {
+		public int largest() throws IntegerSetException {
 	        if (set.isEmpty()) {
-	            throw new IOException("The set is empty");
+	            throw new IntegerSetException();
+	        }
+	        int largest = set.get(0);
+	        for (int i = 1; i < set.size(); i++) {
+	            if (set.get(i) > largest) {
+	                largest = set.get(i);
+	            }
+	        }
+	        return largest;
+	    };
+		
+			
+		 
+		public int smallest() throws IntegerSetException {
+	        if (set.isEmpty()) {
+	            throw new IntegerSetException();
 	        }
 	        int smallest = set.get(0);
 	        for (int i = 1; i < set.size(); i++) {
@@ -68,14 +88,27 @@ public class IntegerSet {
 	        }
 	        return smallest;
 	    }
+		
+		
+		// Adds an item to the set or does nothing it already there​ boolean
 
-//		​// Adds an item to the set or does nothing it already there​
-		​public void add(int item) {
+		public void add(int item) {
+			boolean existItem = false;  
+			for (int i = 0; i < set.size(); i++) {
+				if (set.get(i) == item) {
+					existItem = true;
+				}
+				else{
+					set.add(item);
+				}
+			}
+			
 			
 			
 		}; // adds item to the set or does nothing if it is in set 
 		 
-//		​// Removes an item from the set or does nothing if not there
+
+		//		​// Removes an item from the set or does nothing if not there
 		public void remove(int item) {
 			
 			
@@ -108,10 +141,12 @@ public class IntegerSet {
 		// the Object class.
 		 
 		public String toString() {
-			
-			
-		​// return String representation of your set
-		}
-	}
+			return null;
+		};
+		
+		
+			// return String representation of your set
+}
+	
 
 
