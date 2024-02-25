@@ -120,27 +120,35 @@ public class IntegerSet {
 		 
 		
 		// Set union
-		public void union(IntegerSet intSetb) {
+		public IntegerSet union(IntegerSet intSetb) {
 			ArrayList<Integer>set1 = intSetb.get();
-			Set<Integer>set2 = new HashSet();
-			set2.addAll(set1);
-			set2.addAll(set2);
+			Set<Integer>set2 = new HashSet<Integer>();
+			set2.addAll(set1); //adding everything from set1 into set 2
+			set2.addAll(set2); //adding everything from set 2 into set 2
+			ArrayList<Integer> set3 = new ArrayList<>(set2);
+			IntegerSet unionSet = new IntegerSet(set3);
+			return unionSet;
 		};
 		 
 		private ArrayList<Integer> get() {
-			// TODO Auto-generated method stub
 			return new ArrayList<>(set);
 		}
+		
+		
 
 		// Set intersection, all elements in s1 and s2
-		public void intersect(IntegerSet intSetb) { 
-		
+		public IntegerSet intersect(IntegerSet intSetb) { 
+			ArrayList<Integer> temp = intSetb.get();
+			set.retainAll(temp);
+			IntegerSet IntersectSet = new IntegerSet();
+			return IntersectSet;
 		};
 		 
 		// Set difference, i.e., s1 –s2
 		public void diff(IntegerSet intSetb) {
 		} // set difference, i.e. s1 - s2
 		 
+		
 		// Set complement, all elements not in s1
 		public void complement(IntegerSet intSetb) {
 		}
