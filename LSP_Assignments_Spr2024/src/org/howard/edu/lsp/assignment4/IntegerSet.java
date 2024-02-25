@@ -132,7 +132,7 @@ public class IntegerSet {
 		 
 		private ArrayList<Integer> get() {
 			return new ArrayList<>(set);
-		}
+		};
 		
 		
 
@@ -146,15 +146,31 @@ public class IntegerSet {
 		 
 		// Set difference, i.e., s1 –s2
 		public void diff(IntegerSet intSetb) {
+			
+			
 		} // set difference, i.e. s1 - s2
 		 
 		
 		// Set complement, all elements not in s1
 		public void complement(IntegerSet intSetb) {
-		}
+			List<Integer> setB = intSetb.get();
+	        for (Integer item:setB) {
+	            if (set.contains(item)) {
+	                set.remove(item);
+	            }
+	        }
+	    };
+	
 		 
 		// Returns true if the set is empty, false otherwise
 		boolean isEmpty() {
+			for(int i = 0; i < set.size(); i++)
+			{
+				if(set.isEmpty())
+				{
+					return true;
+				}
+			}
 			return false;
 		}
 		 
