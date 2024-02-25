@@ -1,10 +1,9 @@
 package org.howard.edu.lsp.assignment4;
 
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-
-import javax.imageio.IIOException;
+import java.util.Set;
 
 public class IntegerSet {
     // Store the set elements in an ArrayList
@@ -35,7 +34,7 @@ public class IntegerSet {
 		 
 		
 		/*
-		             * Returns true if the 2 sets are equal, false otherwise;
+		* Returns true if the 2 sets are equal, false otherwise;
 		* Two sets are equal if they contain all of the same values in ANY order.  This overrides
 		* the equal method from the Object class.
 		*/
@@ -98,7 +97,7 @@ public class IntegerSet {
 				if (set.get(i) == item) {
 					existItem = true;
 				}
-				else{
+				else {
 					set.add(item);
 				}
 			}
@@ -110,15 +109,29 @@ public class IntegerSet {
 
 		//		​// Removes an item from the set or does nothing if not there
 		public void remove(int item) {
-			
+			for(int i = 0; i < set.size(); i++) {
+				if(set.get(i) == item)
+				{
+					set.remove(i);
+				}
+			}
 			
 		};
 		 
+		
 		// Set union
 		public void union(IntegerSet intSetb) {
-			
+			ArrayList<Integer>set1 = intSetb.get();
+			Set<Integer>set2 = new HashSet();
+			set2.addAll(set1);
+			set2.addAll(set2);
 		};
 		 
+		private ArrayList<Integer> get() {
+			// TODO Auto-generated method stub
+			return new ArrayList<>(set);
+		}
+
 		// Set intersection, all elements in s1 and s2
 		public void intersect(IntegerSet intSetb) { 
 		
