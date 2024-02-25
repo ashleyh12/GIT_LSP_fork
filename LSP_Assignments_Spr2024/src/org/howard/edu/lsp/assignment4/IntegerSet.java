@@ -51,11 +51,11 @@ public class IntegerSet {
 		};
 		 
 		
-		// Returns true if the set contains the value, otherwise false ??????????????????!!!!!!
-		public boolean contains(int value) {
-			return false;
-			
-		};    
+//		// Returns true if the set contains the value, otherwise false ??????????????????!!!!!!
+//		public boolean contains(int value) {
+//			return false;
+//			
+//		};    
 		 
 		
 		
@@ -145,8 +145,12 @@ public class IntegerSet {
 		};
 		 
 		// Set difference, i.e., s1 –s2
-		public void diff(IntegerSet intSetb) {
-			
+		public IntegerSet diff(IntegerSet intSetb) {
+			ArrayList<Integer> set2 = intSetb.get();
+			// Removing all the elements in set2 from set1
+			set.removeAll(set2);
+			IntegerSet DiffSet = new IntegerSet((ArrayList<Integer>) set);
+			return DiffSet;
 			
 		} // set difference, i.e. s1 - s2
 		 
@@ -172,7 +176,7 @@ public class IntegerSet {
 				}
 			}
 			return false;
-		}
+		};
 		 
 		// Return String representation of your set.  This overrides the equal method from
 		// the Object class.
