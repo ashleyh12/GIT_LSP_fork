@@ -41,14 +41,15 @@ public class IntegerSet {
 		
 		public boolean equals(IntegerSet o) {
 			ArrayList<Integer>set2 = (ArrayList<Integer>) o.set;
-			if(set.size() == set2.size()) {
-				return true;
+			for (Integer i : set) {
+	            if (!set2.contains(i)) {
+	                return false;
+	            }
 			}
-			else {
-				return false;
-			}
-			
+			return true;
 		};
+	
+	
 		 
 		
 //		// Returns true if the set contains the value, otherwise false ??????????????????!!!!!!
@@ -130,7 +131,7 @@ public class IntegerSet {
 			return unionSet;
 		};
 		 
-		private ArrayList<Integer> get() {
+		ArrayList<Integer> get() {
 			return new ArrayList<>(set);
 		};
 		
