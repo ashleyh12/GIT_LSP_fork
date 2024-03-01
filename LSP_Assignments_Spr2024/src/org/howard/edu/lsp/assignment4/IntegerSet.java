@@ -215,7 +215,7 @@ public class IntegerSet {
 	     * 
 	     */
 		public String toString() {
-			return null;
+			return set.toString();
 		};
 		
 		
