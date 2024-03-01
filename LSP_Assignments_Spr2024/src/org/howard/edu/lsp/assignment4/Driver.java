@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Driver {
 	public class IntegerSetException extends Exception {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws org.howard.edu.lsp.assignment4.IntegerSetException {
 		// TODO Auto-generated method stub
 		ArrayList<Integer> list1= new ArrayList<>();
 		ArrayList<Integer> list2= new ArrayList<>();
@@ -36,19 +36,9 @@ public class Driver {
 
 		System.out.println("Is Set1 equal to Set2 : " + set1.equals(set2));
 
-		try {
-			System.out.println("Largest element in set 1 : " + set1.largest());
-		} catch (org.howard.edu.lsp.assignment4.IntegerSetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		System.out.println("Largest element in set 1 : " + set1.largest());
 
-		try {
-			System.out.println("Smallest element in set 2 : " + set2.smallest());
-		} catch (org.howard.edu.lsp.assignment4.IntegerSetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		System.out.println("Smallest element in set 2 : " + set2.smallest());
 
 		IntegerSet seta = set2.union(set1);
 
