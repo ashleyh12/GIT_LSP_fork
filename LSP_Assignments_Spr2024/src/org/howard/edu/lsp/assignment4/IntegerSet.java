@@ -1,12 +1,14 @@
 package org.howard.edu.lsp.assignment4;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class IntegerSet {
-    // Store the set elements in an ArrayList
+    private static final Collection<?> temp = null;
+	// Store the set elements in an ArrayList
     private List<Integer> set;
 
     // Default Constructor
@@ -18,20 +20,26 @@ public class IntegerSet {
     public IntegerSet(ArrayList<Integer> set) {
         this.set = set;
     }
+
     
-    
-//		​// Clears the internal representation of the set
+	    /***
+	     * Clears the internal representation of the set
+	     * 
+	     */
 		public void clear() {
 			set.clear();
 			
 		};
 		 
-		// Returns the length of the set
+	    /***
+	     * Returns the length of the set
+	     * 
+	     */
 		public int length() {
 			return set.size();
 			
 		}; // returns the length
-		 
+
 		
 		/*
 		* Returns true if the 2 sets are equal, false otherwise;
@@ -51,16 +59,20 @@ public class IntegerSet {
 	
 	
 		 
-		
-//		// Returns true if the set contains the value, otherwise false ??????????????????!!!!!!
-//		public boolean contains(int value) {
-//			return false;
-//			
-//		};    
+	    /***
+	     * Returns true if the set contains the value, otherwise false
+	     * 
+	     */
+		public boolean contains(int value) {
+			return set.contains(value);
+			
+		};    
 		 
 		
-		
-		// Returns the largest item in the set; Throws a IntegerSetException if the set is empty
+	    /***
+	     * Returns the largest item in the set; Throws a IntegerSetException if the set is empty
+	     * 
+	     */
 		public int largest() throws IntegerSetException {
 	        if (set.isEmpty()) {
 	            throw new IntegerSetException();
@@ -75,7 +87,10 @@ public class IntegerSet {
 	    };
 		
 			
-		 
+	    /***
+	     * Returns the smallest item in the set; Throws a IntegerSetException if the set is empty
+	     * 
+	     */
 		public int smallest() throws IntegerSetException {
 	        if (set.isEmpty()) {
 	            throw new IntegerSetException();
@@ -89,9 +104,10 @@ public class IntegerSet {
 	        return smallest;
 	    }
 		
-		
-		// Adds an item to the set or does nothing it already there​ boolean
-
+	    /***
+	     * Adds an item to the set or does nothing it already there​ boolean
+	     * 
+	     */
 		public void add(int item) {
 			boolean existItem = false;  
 			for (int i = 0; i < set.size(); i++) {
@@ -105,10 +121,12 @@ public class IntegerSet {
 			
 			
 			
-		}; // adds item to the set or does nothing if it is in set 
+		}; 
 		 
-
-		//		​// Removes an item from the set or does nothing if not there
+	    /***
+	     * Removes an item from the set or does nothing if not there
+	     * 
+	     */
 		public void remove(int item) {
 			for(int i = 0; i < set.size(); i++) {
 				if(set.get(i) == item)
@@ -119,8 +137,10 @@ public class IntegerSet {
 			
 		};
 		 
-		
-		// Set union
+	    /***
+	     * Set union
+	     * 
+	     */
 		public IntegerSet union(IntegerSet intSetb) {
 			ArrayList<Integer>set1 = intSetb.get();
 			Set<Integer>set2 = new HashSet<Integer>();
@@ -136,16 +156,21 @@ public class IntegerSet {
 		};
 		
 		
-
-		// Set intersection, all elements in s1 and s2
+	    /***
+	     * Set intersection, all elements in s1 and s2
+	     * 
+	     */
 		public IntegerSet intersect(IntegerSet intSetb) { 
-			ArrayList<Integer> temp = intSetb.get();
-			set.retainAll(temp);
-			IntegerSet IntersectSet = new IntegerSet();
-			return IntersectSet;
+		    set.retainAll(intSetb.set);
+			return intSetb;
+
+
 		};
 		 
-		// Set difference, i.e., s1 –s2
+	    /***
+	     * Set difference, i.e., s1 –s2
+	     * 
+	     */
 		public IntegerSet diff(IntegerSet intSetb) {
 			ArrayList<Integer> set2 = intSetb.get();
 			// Removing all the elements in set2 from set1
@@ -153,10 +178,12 @@ public class IntegerSet {
 			IntegerSet DiffSet = new IntegerSet((ArrayList<Integer>) set);
 			return DiffSet;
 			
-		} // set difference, i.e. s1 - s2
+		} 
 		 
-		
-		// Set complement, all elements not in s1
+	    /***
+	     * Set complement, all elements not in s1
+	     * 
+	     */
 		public void complement(IntegerSet intSetb) {
 			List<Integer> setB = intSetb.get();
 	        for (Integer item:setB) {
@@ -166,8 +193,11 @@ public class IntegerSet {
 	        }
 	    };
 	
-		 
-		// Returns true if the set is empty, false otherwise
+	    
+	    /***
+	     * Returns true if the set is empty, false otherwise
+	     * 
+	     */
 		boolean isEmpty() {
 			for(int i = 0; i < set.size(); i++)
 			{
@@ -179,15 +209,17 @@ public class IntegerSet {
 			return false;
 		};
 		 
-		// Return String representation of your set.  This overrides the equal method from
-		// the Object class.
-		 
+		
+	    /***
+	     * Return String representation of your set.  This overrides the equal method from 
+	     * the Object class.
+	     * 
+	     */
 		public String toString() {
 			return null;
 		};
 		
 		
-			// return String representation of your set
 }
 	
 

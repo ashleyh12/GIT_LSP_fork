@@ -20,7 +20,7 @@ public class Driver {
 		list1.add(4);
 		list1.add(6);
 		list1.add(3);
-		list1.add(5);
+		list1.add(8);
 		list1.add(7);
 
 		list2.add(1);
@@ -50,13 +50,13 @@ public class Driver {
 			e.printStackTrace();
 		}
 
-		IntegerSet seta = set1.union(set2);
+		IntegerSet seta = set2.union(set1);
 
-		System.out.println("Union : "+seta.get() );
+		System.out.println("Union : " + seta.get() );
 
-		IntegerSet setb = set1.diff(set2);
+		IntegerSet setb = set2.intersect(set1);
 
-		System.out.println("Intersection : "+setb.get() );
+		System.out.println("Intersection : " + setb.get() );
 
 
 
