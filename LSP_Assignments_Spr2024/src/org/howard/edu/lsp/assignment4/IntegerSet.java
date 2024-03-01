@@ -74,7 +74,7 @@ public class IntegerSet {
 	     */
 		public int largest() throws IntegerSetException {
 	        if (set.isEmpty()) {
-	            throw new IntegerSetException();
+	            throw new IntegerSetException(null);
 	        }
 	        int largest = set.get(0);
 	        for (int i = 1; i < set.size(); i++) {
@@ -92,7 +92,7 @@ public class IntegerSet {
 	     */
 		public int smallest() throws IntegerSetException {
 	        if (set.isEmpty()) {
-	            throw new IntegerSetException();
+	            throw new IntegerSetException(null);
 	        }
 	        int smallest = set.get(0);
 	        for (int i = 1; i < set.size(); i++) {
@@ -219,7 +219,7 @@ public class IntegerSet {
 		};
 		
 		
-}
+} 
 //// 		!!!!!!!!!!
 //
 //
@@ -228,5 +228,4 @@ public class IntegerSet {
 //		!!!!!!!!!!
 //	
 //	
-
 
