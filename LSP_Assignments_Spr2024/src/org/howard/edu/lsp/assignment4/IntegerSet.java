@@ -118,8 +118,6 @@ public class IntegerSet {
 				}
 			}
 			
-			
-			
 		}; 
 		 
 	    /***
