@@ -16,7 +16,6 @@ public class SecurityOps
 		         * appending even-indexed characters to StringBuilder and evenChars. 
 		         *  odd-index characters to another StringBuilder oddChars
 		        */
-		    	
 		        StringBuilder encryptedText = new StringBuilder(); 
 		        StringBuilder evenChars = new StringBuilder();
 		        StringBuilder oddChars = new StringBuilder();
