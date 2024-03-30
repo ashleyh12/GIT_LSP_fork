@@ -1,10 +1,9 @@
 package org.howard.edu.lsp.assignment5;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-
-import org.howard.edu.lsp.assignment4.IntegerSet;
-import org.howard.edu.lsp.assignment4.IntegerSetException;
+import java.util.Set;
 
 public class IntegerSetTest {
 
@@ -66,4 +65,105 @@ public class IntegerSetTest {
 
 	}
 
+//IntegerSet class from Assignment 4
 
+	class IntegerSet {
+	    private List<Integer> set;
+	
+	    public IntegerSet() {
+	        set = new ArrayList<>();
+	    }
+	
+	    public void clear() {
+	        set.clear();
+	    }
+	
+	    public int length() {
+	        return set.size();
+	    }
+	
+	    @Override
+	    public boolean equals(Object o) {
+	        if (this == o) return true;
+	        if (o == null || getClass() != o.getClass()) return false;
+	        IntegerSet that = (IntegerSet) o;
+	        return setEquals(that.set, set);
+	    }
+	    private boolean setEquals(List<Integer> set2, List<Integer> set3) {
+	        return set2.size() == set3.size() && set2.containsAll(set3);
+		}
+
+		public boolean contains(int value) {
+	        return set.contains(value);
+	    }
+	
+	    public int largest() {
+	        if (set.isEmpty()) {
+	            throw new IntegerSetException("set is empty");
+	        }
+	        int max = Integer.MIN_VALUE;
+	        for (int num : set) {
+	            if (num > max) {
+	                max = num;
+	            }
+	        }
+	        return max;
+	    }
+	
+	    public int smallest() {
+	        if (set.isEmpty()) {
+	            throw new IntegerSetException("set is empty");
+	        }
+	        int min = Integer.MAX_VALUE;
+	        for (int num : set) {
+	            if (num < min) {
+	                min = num;
+	            }
+	        }
+	        return min;
+	    }
+	
+	    public void add(int item) {
+	        set.add(item);
+	    }
+	
+	    public void remove(int item) {
+	        set.remove((Integer) item);
+	    }
+	
+	    public void union(IntegerSet intSetb) {
+	        set.addAll(intSetb.set);
+	    }
+	
+	    public void intersect(IntegerSet intSetb) {
+	        set.retainAll(intSetb.set);
+	    }
+	
+	    public void diff(IntegerSet intSetb) {
+	        set.removeAll(intSetb.set);
+	    }
+	
+	    public void complement(IntegerSet intSetb) {
+	        Set<Integer> complementSet = new HashSet<>(intSetb.set);
+	        complementSet.removeAll(set);
+	        set = new ArrayList<>(complementSet);
+	    }
+	
+	    public boolean isEmpty() {
+	        return set.isEmpty();
+	    }
+	
+	    @Override
+	    public String toString() {
+	        return set.toString();
+	    }
+	}
+	
+	class IntegerSetException extends RuntimeException {
+	    private static final long serialVersionUID = 1L;
+
+		public IntegerSetException(String message) {
+	        super(message);
+	    }
+	}
+	
