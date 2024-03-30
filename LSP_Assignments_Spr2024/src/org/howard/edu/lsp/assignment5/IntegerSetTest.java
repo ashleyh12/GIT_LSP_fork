@@ -1,19 +1,21 @@
 package org.howard.edu.lsp.assignment5;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows; // Correct import statement
+
+import org.howard.edu.lsp.assignment4.IntegerSet;
 
 public class IntegerSetTest {
 
@@ -63,7 +65,7 @@ public class IntegerSetTest {
 
     @Test
     @DisplayName("Test case for largest")
-    public void testLargest() {
+    public void testLargest() throws org.howard.edu.lsp.assignment4.IntegerSetException {
         set.add(5);
         set.add(10);
         assertEquals(10, set.largest());
@@ -71,13 +73,13 @@ public class IntegerSetTest {
 
     @Test
     @DisplayName("Test case for largest with empty set")
-    public void testLargestEmpty() {
+    public void testExceptionLargestEmptySet() {
         assertThrows(IntegerSetException.class, () -> set.largest());
     }
 
     @Test
     @DisplayName("Test case for smallest")
-    public void testSmallest() {
+    public void testSmallest() throws org.howard.edu.lsp.assignment4.IntegerSetException {
         set.add(5);
         set.add(10);
         assertEquals(5, set.smallest());
@@ -85,7 +87,7 @@ public class IntegerSetTest {
 
     @Test
     @DisplayName("Test case for smallest with empty set")
-    public void testSmallestEmpty() {
+    public void testExceptionSmallestEmptySet() {
         assertThrows(IntegerSetException.class, () -> set.smallest());
     }
 
@@ -177,23 +179,6 @@ public class IntegerSetTest {
         set.add(10);
         assertEquals("[5, 10]", set.toString());
     }
-
-
-    @Test
-    @DisplayName("Test case for exception when computing largest with empty set")
-    public void testExceptionLargestEmptySet() {
-        assertThrows(IntegerSetException.class, () -> set.largest());
-    }
-
-    @Test
-    @DisplayName("Test case for exception when computing smallest with empty set")
-    public void testExceptionSmallestEmptySet() {
-        assertThrows(IntegerSetException.class, () -> set.smallest());
-    }
-
-
-
-
 
 
 public class IntegerSet {
@@ -293,4 +278,5 @@ class IntegerSetException extends RuntimeException {
     public IntegerSetException(String message) {
         super(message);
     }
-}}
+}
+}
