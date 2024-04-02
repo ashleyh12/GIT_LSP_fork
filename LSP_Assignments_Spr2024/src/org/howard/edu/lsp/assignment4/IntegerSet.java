@@ -195,7 +195,7 @@ public class IntegerSet {
 	     * Returns true if the set is empty, false otherwise
 	     * 
 	     */
-		boolean isEmpty() {
+		public boolean isEmpty() {
 			for(int i = 0; i < set.size(); i++)
 			{
 				if(set.isEmpty())

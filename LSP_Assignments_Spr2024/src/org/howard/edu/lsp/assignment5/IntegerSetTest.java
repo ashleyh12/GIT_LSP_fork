@@ -1,17 +1,13 @@
 package org.howard.edu.lsp.assignment5;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows; // Correct import statement
 
@@ -86,7 +82,7 @@ public class IntegerSetTest {
     }
 
     @Test
-    @DisplayName("Test case for smallest with empty set")
+    @DisplayName("Test case for smallest with an empty set")
     public void testExceptionSmallestEmptySet() {
         assertThrows(IntegerSetException.class, () -> set.smallest());
     }
