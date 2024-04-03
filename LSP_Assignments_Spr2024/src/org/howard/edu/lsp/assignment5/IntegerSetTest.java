@@ -11,7 +11,6 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows; // Correct import statement
 
-import org.howard.edu.lsp.assignment4.IntegerSet;
 
 public class IntegerSetTest {
 
@@ -61,7 +60,7 @@ public class IntegerSetTest {
 
     @Test
     @DisplayName("Test case for largest")
-    public void testLargest() throws org.howard.edu.lsp.assignment4.IntegerSetException {
+    public void testLargest() throws IntegerSetException {
         set.add(5);
         set.add(10);
         assertEquals(10, set.largest());
@@ -75,7 +74,7 @@ public class IntegerSetTest {
 
     @Test
     @DisplayName("Test case for smallest")
-    public void testSmallest() throws org.howard.edu.lsp.assignment4.IntegerSetException {
+    public void testSmallest() throws IntegerSetException {
         set.add(5);
         set.add(10);
         assertEquals(5, set.smallest());
@@ -270,9 +269,5 @@ public class IntegerSet {
     }
 }
 
-class IntegerSetException extends RuntimeException {
-    public IntegerSetException(String message) {
-        super(message);
-    }
-}
+
 }

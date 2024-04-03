@@ -1,10 +1,12 @@
 package org.howard.edu.lsp.assignment5;
 
-public class IntegerSetException {
+@SuppressWarnings("serial")
+public class IntegerSetException extends RuntimeException {
+    public IntegerSetException(String message) {
+        super(message);
+    }
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+    }
 }
