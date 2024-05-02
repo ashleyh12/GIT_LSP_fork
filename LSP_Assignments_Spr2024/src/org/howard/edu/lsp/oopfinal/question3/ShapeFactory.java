@@ -1,4 +1,4 @@
-package org.howard.edu.lsp.oopfinal.question2;
+package org.howard.edu.lsp.oopfinal.question3;
 
 public class ShapeFactory {
     public Shape createShape(String shapeType) {

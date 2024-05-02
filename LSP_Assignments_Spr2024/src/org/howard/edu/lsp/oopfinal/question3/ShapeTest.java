@@ -1,4 +1,4 @@
-package org.howard.edu.lsp.oopfinal.question2;
+package org.howard.edu.lsp.oopfinal.question3;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
