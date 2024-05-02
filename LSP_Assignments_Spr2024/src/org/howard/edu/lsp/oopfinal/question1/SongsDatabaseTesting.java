@@ -5,11 +5,13 @@ import org.junit.Before;
 import org.junit.Test;
 import java.util.Set;
 
-public class SongsDatabaseTesting {
+public class SongsDatabaseTesting 
+{
     private SongsDatabase db;
 
     @Before
-    public void setUp() {
+    public void setUp() 
+    {
         db = new SongsDatabase();
         db.addSong("Rap", "P.I.M.P");
         db.addSong("Country", "Sweet Alabama");
@@ -17,7 +19,8 @@ public class SongsDatabaseTesting {
     }
 
     @Test
-    public void testAddSongShouldAddSongToGenre() {
+    public void testAddSong() 
+    {
         db.addSong("Rap", "Hate It Or Love It");
         Set<String> rapSongs = db.getSongs("Rap");
         assertTrue(rapSongs.contains("Hate It Or Love It"));
@@ -25,7 +28,8 @@ public class SongsDatabaseTesting {
     }
 
     @Test
-    public void testGetGenreOfSongShouldReturnGenre() {
+    public void testGetGenre() 
+    {
         assertEquals("Rap", db.getGenreOfSong("P.I.M.P"));
         assertEquals("Country", db.getGenreOfSong("Sweet Alabama"));
         assertEquals("Jazz", db.getGenreOfSong("What A Wonderful World"));
@@ -33,7 +37,8 @@ public class SongsDatabaseTesting {
     }
 
     @Test
-    public void testGetSongsShouldReturnSongsForGenre() {
+    public void testGetSongs() 
+    {
         Set<String> rapSongs = db.getSongs("Rap");
         assertTrue(rapSongs.contains("P.I.M.P"));
         assertEquals(1, rapSongs.size());
