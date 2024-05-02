@@ -1,10 +1,13 @@
 package org.howard.edu.lsp.oopfinal.question2;
 
 public class Client {
+    public static void main(String[] args) {
+        ShapeFactory factory = new ShapeFactory();
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+        Shape c = factory.createShape("circle");
+        c.draw();
 
-	}
-
+        Shape r = factory.createShape("rectangle");
+        r.draw();
+    }
 }
