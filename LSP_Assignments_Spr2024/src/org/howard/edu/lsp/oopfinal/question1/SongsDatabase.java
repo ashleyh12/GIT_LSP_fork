@@ -1,9 +1,9 @@
+package org.howard.edu.lsp.oopfinal.question1;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-package org.howard.edu.lsp.oopfinal.question1;
-
 public class SongsDatabase {
     private Map<String, Set<String>> map = new HashMap<String, Set<String>>();
 
