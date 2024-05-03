@@ -31,7 +31,7 @@ public class SongsDatabase
         return null;
     }
 
-    //returning the set that has all songs for a specific genre 
+    //returning the set that has songs for a certain genre 
     public Set<String> getSongs(String genre) 
     {
         return map.getOrDefault(genre, new HashSet<String>());
