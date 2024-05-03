@@ -5,7 +5,8 @@ interface PaymentStrategy
  void pay(double amount);
 }
 
-public class PaymentStrategyDriver {
+public class PaymentStrategyDriver 
+{
  public static void main(String[] args) 
  {
      ShoppingCart cart1 = new ShoppingCart(new CreditCardPayment("1234-5678-9012-3456"));

@@ -1,6 +1,5 @@
 package org.howard.edu.lsp.oopfinal.question2;
 
-//PayPalPayment.java
 public class PayPalPayment implements PaymentStrategy 
 {
 	private String emailAddress;

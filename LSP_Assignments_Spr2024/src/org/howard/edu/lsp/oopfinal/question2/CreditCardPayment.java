@@ -1,6 +1,5 @@
 package org.howard.edu.lsp.oopfinal.question2;
 
-//CreditCardPayment.java
 public class CreditCardPayment implements PaymentStrategy 
 {
 	private String creditCardNumber;

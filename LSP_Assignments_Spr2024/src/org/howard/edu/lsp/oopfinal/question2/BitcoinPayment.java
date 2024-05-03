@@ -1,6 +1,5 @@
 package org.howard.edu.lsp.oopfinal.question2;
 
-//BitcoinPayment.java
 public class BitcoinPayment implements PaymentStrategy 
 {
 	private String bitcoinAddress;
@@ -11,7 +10,8 @@ public class BitcoinPayment implements PaymentStrategy
 	}
 	
 	@Override
-	public void pay(double amount) {
+	public void pay(double amount) 
+	{
 	   System.out.println("Paid " + amount + " using Bitcoin address " + bitcoinAddress);
 	}
 }
