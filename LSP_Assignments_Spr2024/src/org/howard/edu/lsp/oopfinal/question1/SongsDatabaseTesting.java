@@ -50,7 +50,6 @@ public class SongsDatabaseTesting
         Set<String> jazzSongs = db.getSongs("Jazz");
         assertTrue(jazzSongs.contains("What A Wonderful World"));
         assertEquals(1, jazzSongs.size());
-
         assertTrue(db.getSongs("Empty Genre").isEmpty());
     }
 }
