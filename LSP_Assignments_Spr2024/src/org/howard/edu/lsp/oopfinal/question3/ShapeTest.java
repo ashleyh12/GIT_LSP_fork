@@ -13,7 +13,8 @@ public class ShapeTest
     }
 
     @Test
-    public void testCreateRectangle() {
+    public void testCreateRectangle() 
+    {
         ShapeFactory factory = new ShapeFactory();
         Shape r = factory.createShape("rectangle");
         assertTrue(r instanceof Rectangle);

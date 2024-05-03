@@ -7,10 +7,13 @@ public class ShapeFactory
         if (shapeType.equalsIgnoreCase("Circle")) 
         {
             return (Shape) new Circle();
-        } else if (shapeType.equalsIgnoreCase("Rectangle")) 
+        } 
+        
+        else if (shapeType.equalsIgnoreCase("Rectangle")) 
         {
             return new Rectangle();
         }
+        
         return null;
     }
 }
